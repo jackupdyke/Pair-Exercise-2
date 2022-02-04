@@ -1,6 +1,6 @@
 # Week 3 review exercise
 
-Congratulations—you've been hired by a pet setting and grooming company called Pet Elevator. They're building their own software to use in-house.
+Congratulations—you've been hired by a pet sitting and grooming company called Pet Elevator. They're building their own software to use in-house.
 
 Your job is to create classes for the Customer Relationship Management (CRM) system. A CRM system helps to manage customer information and other related data.
 
