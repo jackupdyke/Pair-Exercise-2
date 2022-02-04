@@ -36,5 +36,25 @@ namespace PetElevator.HR
             }
         }
 
+        public double GetBalanceDue(Dictionary<string, double> servicesRendered)
+        {
+            double totalEmployeeAmountDue = 0;
+
+            foreach (KeyValuePair<string, double> kvp in servicesRendered)
+            {
+                if(kvp.Key != "Walking")
+                {
+                    totalEmployeeAmountDue += kvp.Value;
+                }
+                else
+                {
+                    totalEmployeeAmountDue += (kvp.Value / 2.0);
+                }
+                
+            }
+
+            return totalEmployeeAmountDue;
+        }
+
     }
 }
