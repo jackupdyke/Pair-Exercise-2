@@ -39,6 +39,18 @@ namespace PetElevator.Tests
             Assert.AreEqual(100, employee.Salary); //salary should remain same
         }
 
+        [TestMethod]
+        public void GetBalanceDueTest()
+        {
+
+            Employee testObject = new Employee("nameFirst", "nameLast");
+
+            testObject.servicesRendered.Add("Walking", 50);
+
+
+            Assert.AreEqual(50, testObject.GetBalanceDue(testObject.servicesRendered));
+
+        }
 
 
     }

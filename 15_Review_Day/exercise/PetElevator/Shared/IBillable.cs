@@ -5,7 +5,6 @@ namespace PetElevator.Shared
     interface IBillable
     {
         double GetBalanceDue(Dictionary<string, double> servicesRendered);
-
     }
 
 }
