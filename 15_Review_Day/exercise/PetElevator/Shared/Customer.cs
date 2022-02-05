@@ -9,32 +9,32 @@ namespace PetElevator.Shared
 
         public string PhoneNumber { get; set; }
         public List<string> Pets { get; set; }
-        public Dictionary<string, double> servicesRendered { get; set; }
+        public Dictionary<string, double> ServicesRendered { get; set; }
 
         public Customer(string firstName, string lastName, string phoneNumber) : base(firstName, lastName)
         {
             PhoneNumber = phoneNumber;
-            servicesRendered = new Dictionary<string, double>();
+            ServicesRendered = new Dictionary<string, double>();
 
         }
 
         public Customer(string firstName, string lastName) : base(firstName, lastName)
         {
             PhoneNumber = "";
-            servicesRendered = new Dictionary<string, double>();
+            ServicesRendered = new Dictionary<string, double>();
         }
 
         
        public double GetBalanceDue(Dictionary<string, double> servicesRendered)
         {
-            double totalAmountDue = 0;
+            double totalCustomerAmountDue = 0;
 
             foreach(KeyValuePair<string, double> kvp in servicesRendered)
             {
-                totalAmountDue += kvp.Value;
+                totalCustomerAmountDue += kvp.Value;
             }
 
-            return totalAmountDue;
+            return totalCustomerAmountDue;
         }
 
     }

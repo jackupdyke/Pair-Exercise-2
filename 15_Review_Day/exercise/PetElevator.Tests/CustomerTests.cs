@@ -10,18 +10,28 @@ namespace PetElevator.Tests
     public class CustomerTests
     {
         [TestMethod]
-        public void GetBalanceDueTest()
+        // Test for 1 service
+        public void GetBalanceDueSingleServiceTest()
         {
 
             Customer testObject = new Customer("nameFirst", "nameLast");
 
-            testObject.servicesRendered.Add("Walking", 50);
+            testObject.ServicesRendered.Add("Walking", 50);
+
+            Assert.AreEqual(50, testObject.GetBalanceDue(testObject.ServicesRendered));
 
 
-            Assert.AreEqual(50, testObject.GetBalanceDue(testObject.servicesRendered));
+        }
+        [TestMethod]
+        //Test for multiple services
+        public void GetBalanceDueMultipleServicesTest()
+        {
+            Customer testObject = new Customer("nameFirst", "nameLast");
 
+            testObject.ServicesRendered.Add("Grooming", 100);
+            testObject.ServicesRendered.Add("Sitting", 50);
 
-
+            Assert.AreEqual(150, testObject.GetBalanceDue(testObject.ServicesRendered));
         }
     }
 }

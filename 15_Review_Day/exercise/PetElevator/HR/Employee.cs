@@ -9,7 +9,7 @@ namespace PetElevator.HR
         public string Title { get; set; }
         public Department Department { get; set; }
         public double Salary { get; set; }
-        public Dictionary<string, double> servicesRendered { get; set; }
+        public Dictionary<string, double> ServicesRendered { get; set; }
 
         public override string FullName
         {
@@ -21,14 +21,14 @@ namespace PetElevator.HR
 
         public Employee(string firstName, string lastName) : this(firstName, lastName, "", 0)
         {
-            servicesRendered = new Dictionary<string, double>();
+            ServicesRendered = new Dictionary<string, double>();
         }
 
         public Employee(string firstName, string lastName, string title, double salary) : base(firstName, lastName)
         {
             Title = title;
             Salary = salary;
-            servicesRendered = new Dictionary<string, double>();
+            ServicesRendered = new Dictionary<string, double>();
         }
 
         public void RaiseSalary(double percentage)
@@ -51,7 +51,7 @@ namespace PetElevator.HR
                 }
                 else
                 {
-                    totalEmployeeAmountDue += (kvp.Value);
+                    totalEmployeeAmountDue += (kvp.Value / 2.0);
                 }
                 
             }
